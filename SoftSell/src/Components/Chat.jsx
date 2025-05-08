@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 const Chat = () => {
     const [chatOpen, setChatOpen] = useState(false)
