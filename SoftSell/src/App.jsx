@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import { Analytics } from "@vercel/analytics/react";
+import React from "react";
+import { useState } from "react";
 import Buy_and_sell from "./Components/Buy and sell";
 import Chat from "./Components/Chat";
 import Contact from "./Components/Contact";
@@ -6,12 +8,13 @@ import Hero from "./Components/Hero";
 import Testimonials from "./Components/Testimonials";
 import Us from "./Components/Us";
 
-export default function App() {
+const App = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   const toggleMode = () => setDarkMode(!darkMode);
 
-  return (
+  return (<>
+    <Analytics />
     <div className={darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"}>
       <header className="flex items-center justify-between p-6 shadow-md sticky top-0 bg-inherit z-10">
         <h1 className="text-2xl font-bold">SoftSell</h1>
@@ -44,5 +47,8 @@ export default function App() {
         <p>© 2025 SoftSell. All rights reserved.</p>
       </footer>
     </div>
+  </>
   );
 }
+
+export default App;

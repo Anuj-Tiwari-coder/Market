@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-
+import { useState } from 'react';
 const Chat = () => {
-    const [chatOpen, setChatOpen] = useState(false);
+    const [chatOpen, setChatOpen] = useState(false)
     const [messages, setMessages] = useState([
         { sender: "bot", text: "Hi! I'm your assistant. Ask me anything about SoftSell." },
-    ]);
-    const [input, setInput] = useState("");
+    ])
+    const [input, setInput] = useState("")
 
     const exampleQuestions = [
         "How do I sell my license?",
         "What types of licenses do you accept?",
         "Is my data secure?"
-    ];
+    ]
 
     const handleSend = () => {
-        if (!input.trim()) return;
+        if (!input.trim())
+            return;
         const userMessage = { sender: "user", text: input };
         setMessages(prev => [...prev, userMessage]);
 
